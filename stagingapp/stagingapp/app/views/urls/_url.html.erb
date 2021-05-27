@@ -1,0 +1,11 @@
+<tr>
+  <td class="text"><span><%= url.source %></span></td>
+  <td class="text"><span><%= url.destination %></span></td>
+  <td><%= url.active %></td>
+  <td><%= link_to "View redirection", url_path(url) %></td>
+  <td><%= link_to "Edit redirection", edit_url_path(url) %></td>
+  <td><%= link_to "delete", url, method: :delete, data: { confirm: "You sure?" } %></td>
+</tr>
+
+
+

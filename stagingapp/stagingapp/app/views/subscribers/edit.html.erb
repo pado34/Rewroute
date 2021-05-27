@@ -1,0 +1,53 @@
+<script type="text/javascript">
+    Stripe.setPublishableKey('<%= Rails.application.secrets.stripe_publishable_key %>');
+  </script>
+
+  <script type="text/javascript" src="/javascripts/lib/indexx.js"></script>
+
+  
+<h2>Edit your subscription payment info</h2>
+
+
+
+<div class="row justify-content-center">
+<div class="col-md-6">
+
+<p>The operation might take a few seconds.</p>
+
+<%= form_for @subscriber, :html => { :id => "edit_subscriber" } do |f| %>
+
+
+
+
+
+  <span class="payment-errors"></span>
+
+  <p>
+    <%= label_tag "Card Number"%>
+    <%= text_field_tag nil, nil, data: { stripe: "number" }, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= label_tag "Expiration" %>
+    <br>
+    <span>Month (MM)</span>
+    <%= text_field_tag nil, nil, data: { stripe: "exp_month" }, size: 4, class: 'form-control' %>
+    <span>Year (YYYY)</span>
+    <%= text_field_tag nil, nil, data: { stripe: "exp_year" }, size: 4, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= label_tag "CVC"%>
+    <%= text_field_tag nil, nil, data: { stripe: "cvc" }, size: 4, class: 'form-control' %>
+  </p>
+
+  <%= f.submit "Submit new payment info", class: "btn btn-primary" %>
+
+<% end %>
+
+
+
+  </div>
+</div>
+
+

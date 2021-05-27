@@ -1,0 +1,10 @@
+<h1>Rewroute App</h1>
+
+<p>Hi <%= @user.name %>,</p>
+
+<p>
+Welcome to the Rewroute App! Your payment has succeeded. 
+</p>
+<p>You have subscribed to the <%= @plann.name %> plan at the price of <%= @plann.display_price %>$.</p>
+<p>Your subscription lasts until <%= @subb.subscription_expires_at.strftime("%m/%d/%Y") %>.</p>
+<p>We thank you and hope you'll be satisfied with our service!</p>

@@ -1,0 +1,57 @@
+<% provide(:title, @user.name) %>
+<div class="row" >
+  
+    <section class="user_info">
+<div class="container">
+      <h1>
+        <%= @user.name %>
+      </h1>
+</div>
+    </section>
+  
+
+
+  
+<% if @user.urls.any? %>
+<div class="container">
+      <h3>Url redirections (<%= @user.urls.count %>)</h3>
+</div>
+
+
+
+
+<div class="container">
+<div class="table-responsive">
+	<table class="table">
+	  <thead class="thead">
+		<tr>
+		  <th scope="col">source</th>
+		  <th scope="col" >destination</th>
+		  <th scope="col">active</th>
+		  <th scope="col">view</th>
+		  <th scope="col">edit</th>
+		  <th scope="col">delete</th>	  
+		</tr>
+	  </thead>
+	  <tbody>
+		<%= render @urls %>
+	  </tbody>
+	</table>	  
+ </div>
+ 
+      <%= will_paginate @urls %>
+    
+</div>
+<% else %>
+<div class="container">
+<div class="text-center">
+
+<%= link_to "Make a redirection", makeredirect_path , class: "btn btn-primary btn-lg" %>
+
+</div>
+</div>
+<% end %>
+
+</div>
+
+

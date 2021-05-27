@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 
+  card_token: 
+  end_date: 
+  user: one
+
+two:
+  customer_id: 
+  card_token: 
+  end_date: 
+  user: two

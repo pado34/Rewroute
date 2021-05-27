@@ -1,0 +1,30 @@
+<% provide(:title, "Edit redirection") %>
+<h1>Update your redirection</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@url) do |f| %>
+      
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :source %>
+      <%= f.text_field :source, class: 'form-control' %>
+
+      <%= f.label :destination %>
+
+
+      </br>
+      <span>Make sure to include http:// or https:// before your destination address.</span>
+
+
+      <%= f.text_area :destination,  class: 'form-control' %>
+	  
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+
+  </div>
+</div>
+
+
+

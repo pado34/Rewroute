@@ -1,0 +1,2 @@
+class Changeplan < ApplicationRecord
+end

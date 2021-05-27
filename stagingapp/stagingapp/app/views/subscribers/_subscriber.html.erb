@@ -1,0 +1,11 @@
+Subscribed to <span class="name"><%= subscriber.plan.name %></span> plan.
+<span class="timestamp">
+Your subscription lasts until <%= subscriber.subscription_expires_at.strftime("%m/%d/%Y") %>.
+
+You will be re-subscribed automatically every month. 
+If you want to cancel at any time you can by unsubscribing with the unsubscribe button.
+</span>
+
+<%= link_to "unsubscribe", subscriber, method: :delete, data: { confirm: "You sure?" } %>
+
+

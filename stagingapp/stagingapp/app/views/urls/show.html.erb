@@ -1,0 +1,58 @@
+<% provide(:title, "My redirection") %>
+<div class="row">
+
+
+<div class="container">
+<h3>Your redirection</h3>
+<div class="table-responsive">
+	<table class="table">
+	  <thead class="thead">
+		<tr>
+		  <th scope="col">source</th>
+		  <th scope="col" >destination</th>
+		  <th scope="col">active</th>	  
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td><%= @url.source %></td>
+		  <td><%= @url.destination %></td>
+		  <td><%= @url.active %></td>
+		</tr>
+	  </tbody>
+	</table>	  
+</div>
+
+</div>
+
+
+<div class="container">
+<h3>DNS entry</h3>
+<p>Your DNS entry should look like this below for this redirect.</p>
+<div class="table-responsive">
+
+
+
+	<table class="table">
+	  <thead class="thead">
+		<tr>
+		  <th scope="col">source domain name</th>
+		  <th scope="col" >Destination</th>
+		  <th scope="col">Record Type</th>	  
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td><%= @url.source %></td>
+		  <td>rewroute.com</td>
+		  <td>CNAME</td>
+		</tr>
+	  </tbody>
+	</table>	  
+</div>
+
+</div>  
+
+
+
+</div>

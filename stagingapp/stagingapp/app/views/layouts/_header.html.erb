@@ -1,0 +1,50 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Rewroute app", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <% if logged_in? %>
+		  
+		  
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Your redirections", current_user %></li>
+			  <li><%= link_to "Update your profile", edit_user_path(current_user) %></li>
+			  
+
+			  <li><%= link_to "Make a redirection", makeredirect_path %></li>
+			  
+			  
+			  
+			  
+			  
+			  <% if subscribed? %>
+			    <li><%= link_to "Your subscription", subscriber_path(current_subscriber_id) %></li>
+			  <% else %>
+			    <li><%= link_to "Subscribe", new_subscriber_path %></li>
+				
+			  <% end %>
+			  
+			  <% if subscribed? %>
+	            <li><%= link_to "Change payment info", edit_subscriber_path(current_subscriber_id) %></li>
+				
+				<li><%= link_to "Change plan", edit_changeplan_path(current_subscriber_id) %></li>
+			  <% end %>
+			  
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

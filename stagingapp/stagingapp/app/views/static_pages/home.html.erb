@@ -1,0 +1,364 @@
+<section>
+<div class="container">
+<div class="center jumbotron">
+  <h1>Welcome to the Rewroute App</h1>
+
+  <h2>
+    Easily reroute your http links using our Rewroute site.
+  </h2>
+
+  <% if logged_in? %>
+  
+  <% else %>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
+  
+</div>
+</div>
+</section>
+
+
+
+
+<section class="pb_section bg-light pb_slant-white pb_pb-250" 
+id="section-features">
+  <div class="container">
+	<div class="row justify-content-center mb-5">
+	  <div class="col-md-6 text-center mb-5">
+		<h5 class="text-uppercase pb_font-15 mb-2 
+pb_color-dark-opacity-3 
+pb_letter-spacing-2"><strong>Features</strong></h5>
+		<h2>App Features</h2>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="col-lg-4 col-md- col-sm-6">
+		<div class="media d-block pb_feature-v1 text-left">
+		  <div class="pb_icon"><i 
+class="ion-ios-bookmarks-outline pb_icon-gradient"></i></div>
+		  <div class="media-body">
+			<h5 class="mt-0 mb-3 heading">Minimal 
+Design</h5>
+			<p class="text-sans-serif">Our design is simple and intuitive. It's straight to the point and lets you focus on what's important. </p>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-lg-4 col-md- col-sm-6">
+		<div class="media d-block pb_feature-v1 text-left">
+		  <div class="pb_icon"><i 
+class="ion-ios-speedometer-outline pb_icon-gradient"></i></div>
+		  <div class="media-body">
+			<h5 class="mt-0 mb-3 heading">Fast Loading</h5>
+			<p class="text-sans-serif">Blazing fast, our redirections are seamless for the end user.</p>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-lg-4 col-md- col-sm-6">
+		<div class="media d-block pb_feature-v1 text-left">
+		  <div class="pb_icon"><i 
+class="ion-ios-infinite-outline pb_icon-gradient"></i></div>
+		  <div class="media-body">
+			<h5 class="mt-0 mb-3 heading">Unlimited 
+Possibilities</h5>
+			<p class="text-sans-serif">All kinds of redirections for all kinds of possibilities. Whatever the use case, our redirection engine is here to make those possibilities a reality.</p>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-lg-4 col-md- col-sm-6">
+		<div class="media d-block pb_feature-v1 text-left">
+		  <div class="pb_icon"><i 
+class="ion-android-cloud-outline pb_icon-gradient"></i></div>
+		  <div class="media-body">
+			<h5 class="mt-0 mb-3 heading">Component Based 
+Design</h5>
+			<p class="text-sans-serif">Each part that makes our rerouting system work is independant from each other making it a robust and failsafe architecture.</p>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-lg-4 col-md- col-sm-6">
+		<div class="media d-block pb_feature-v1 text-left">
+		  <div class="pb_icon"><i 
+class="ion-university pb_icon-gradient"></i></div>
+		  <div class="media-body">
+			<h5 class="mt-0 mb-3 heading">Educational blog</h5>
+			<p class="text-sans-serif">Learn more about the world of redirections on our <a href="http://blog.rewroute.com">blog</a> and harness the power they can give you.</p>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-lg-4 col-md- col-sm-6">
+		<div class="media d-block pb_feature-v1 text-left">
+		  <div class="pb_icon"><i 
+class="ion-ios-pie-outline pb_icon-gradient"></i></div>
+		  <div class="media-body">
+			<h5 class="mt-0 mb-3 heading">Analytics</h5>
+			<p class="text-sans-serif">Analyze and visualize the data behind your redirections. Geolocalisation, clicks, revenue generated and more. (Features to come soon.)</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div> </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% if logged_in? %>
+	<% if subscribed? %>
+		
+
+
+
+		<section class="pb_section bg-light pb_slant-white" id="section-pricing">
+		  <div class="container">
+			<div class="row justify-content-center mb-5">
+			  <div class="col-md-6 text-center mb-5">
+				<h5 class="text-uppercase pb_font-15 mb-2 pb_color-dark-opacity-3 pb_letter-spacing-2"><strong>Pricing</strong></h5>
+				<h2>Choose Your Plan</h2>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border text-center bg-white">
+				  <h3>Personal </h3>
+				  <span class="price"><sup>$</sup>2<span>month</span></span>
+				  <p class="pb_font-15">10 destinations</p>
+				  
+				  <p class="mb-0"><%= link_to "Get started", edit_changeplan_path(current_subscriber_id), class: "btn btn-secondary" %></p>
+				</div>
+			  </div>
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border border-primary text-center bg-white">
+				  <h3>Professional</h3>
+				  <span class="price"><sup>$</sup>10<span>month</span></span>
+				  <p class="pb_font-15">50 destinations</p>
+				 
+				  <p class="mb-0"><%= link_to "Get started", edit_changeplan_path(current_subscriber_id), class: "btn btn-primary btn-shadow-blue" %></p>
+				</div>
+			  </div>
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border text-center bg-white">
+				  <h3>Business</h3>
+				  <span class="price"><sup>$</sup>20<span>month</span></span>
+				  <p class="pb_font-15">100 destinations</p>
+				  
+				  <p class="mb-0"><%= link_to "Get started", edit_changeplan_path(current_subscriber_id), class: "btn btn-secondary" %></p>
+				</div>
+			  </div>
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border text-center bg-white">
+				  <h3>Big business</h3>
+				  <span class="price"><sup>$</sup>50<span>month</span></span>
+				  <p class="pb_font-15">300 destinations</p>
+				  
+				  <p class="mb-0"><%= link_to "Get started", edit_changeplan_path(current_subscriber_id), class: "btn btn-secondary" %></p>
+				</div>
+			  </div>		  
+			</div>
+		  </div>
+		</section>
+
+
+
+
+
+
+	<% else %>
+		<section class="pb_section bg-light pb_slant-white" id="section-pricing">
+		  <div class="container">
+			<div class="row justify-content-center mb-5">
+			  <div class="col-md-6 text-center mb-5">
+				<h5 class="text-uppercase pb_font-15 mb-2 pb_color-dark-opacity-3 pb_letter-spacing-2"><strong>Pricing</strong></h5>
+				<h2>Choose Your Plan</h2>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border text-center bg-white">
+				  <h3>Personal </h3>
+				  <span class="price"><sup>$</sup>2<span>month</span></span>
+				  <p class="pb_font-15">10 destinations</p>
+				  <p class="pb_font-15">Partial https support</p>
+				  <p class="mb-0"><%= link_to "Get started", new_subscriber_path, class: "btn btn-secondary" %></p>
+				</div>
+			  </div>
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border border-primary text-center bg-white">
+				  <h3>Professional</h3>
+				  <span class="price"><sup>$</sup>10<span>month</span></span>
+				  <p class="pb_font-15">50 destinations</p>
+				  <p class="pb_font-15">Full https support</p>
+				  <p class="mb-0"><%= link_to "Get started", new_subscriber_path, class: "btn btn-primary btn-shadow-blue" %></p>
+				</div>
+			  </div>
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border text-center bg-white">
+				  <h3>Business</h3>
+				  <span class="price"><sup>$</sup>20<span>month</span></span>
+				  <p class="pb_font-15">100 destinations</p>
+				  <p class="pb_font-15">Full https support</p>
+				  <p class="mb-0"><%= link_to "Get started", new_subscriber_path, class: "btn btn-secondary" %></p>
+				</div>
+			  </div>
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border text-center bg-white">
+				  <h3>Big business</h3>
+				  <span class="price"><sup>$</sup>50<span>month</span></span>
+				  <p class="pb_font-15">300 destinations</p>
+				  <p class="pb_font-15">Full https support</p>
+				  <p class="mb-0"><%= link_to "Get started", new_subscriber_path, class: "btn btn-secondary" %></p>
+				</div>
+			  </div>		  
+			</div>
+		  </div>
+		</section>
+
+
+
+
+
+
+	<% end %>
+<% else %>
+		<section class="pb_section bg-light pb_slant-white" id="section-pricing">
+		  <div class="container">
+			<div class="row justify-content-center mb-5">
+			  <div class="col-md-6 text-center mb-5">
+				<h5 class="text-uppercase pb_font-15 mb-2 pb_color-dark-opacity-3 pb_letter-spacing-2"><strong>Pricing</strong></h5>
+				<h2>Choose Your Plan</h2>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border text-center bg-white">
+				  <h3>Personal </h3>
+				  <span class="price"><sup>$</sup>2<span>month</span></span>
+				  <p class="pb_font-15">10 destinations</p>
+				  
+				  <p class="mb-0"><%= link_to "Get started", signup_path, class: "btn btn-secondary" %></p>
+				</div>
+			  </div>
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border border-primary text-center bg-white">
+				  <h3>Professional</h3>
+				  <span class="price"><sup>$</sup>10<span>month</span></span>
+				  <p class="pb_font-15">50 destinations</p>
+				  
+				  <p class="mb-0"><%= link_to "Get started", signup_path, class: "btn btn-primary btn-shadow-blue" %></p>
+				</div>
+			  </div>
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border text-center bg-white">
+				  <h3>Business</h3>
+				  <span class="price"><sup>$</sup>20<span>month</span></span>
+				  <p class="pb_font-15">100 destinations</p>
+				  
+				  <p class="mb-0"><%= link_to "Get started", signup_path, class: "btn btn-secondary" %></p>
+				</div>
+			  </div>
+			  <div class="col-md">
+				<div class="pb_pricing_v1 p-5 border text-center bg-white">
+				  <h3>Big business</h3>
+				  <span class="price"><sup>$</sup>50<span>month</span></span>
+				  <p class="pb_font-15">300 destinations</p>
+				  
+				  <p class="mb-0"><%= link_to "Get started", signup_path, class: "btn btn-secondary" %></p>
+				</div>
+			  </div>		  
+			</div>
+		  </div>
+		</section>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="pb_section pb_slant-white" id="section-faq">
+  <div class="container">
+	<div class="row justify-content-center mb-5">
+	  <div class="col-md-6 text-center mb-5">
+		<h5 class="text-uppercase pb_font-15 mb-2 pb_color-dark-opacity-3 pb_letter-spacing-2"><strong>FAQ</strong></h5>
+		<h2>Frequently Asked Questions</h2>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="col-md">
+		<div id="pb_faq" class="pb_accordion" data-children=".item">
+		  <div class="item">
+			<p class="lolll" >What is a redirection?</p>
+			<div id="pb_faq1"  role="tabpanel">
+			  <div class="py-3">
+			  <p>URL redirection is for making a web page available under more than one URL address.</p>
+			  <p>You can use them for all kinds of purposes, learn more about them on our <a href="http://blog.rewroute.com">blog</a>.</p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="item">
+			<p class="lolll" >What counts as a redirection?</p>
+			<div id="pb_faq2" role="tabpanel">
+			  <div class="py-3">
+				<p>You can have many different URL addresses pointing to one same page, they all count as the same redirection. It's different destinations that count as different redirections.</p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="item">
+			<p class="lolll" >How does it work?</p>
+			<div id="pb_faq3" role="tabpanel">
+			  <div class="py-3">
+				<p>Simply create a redirection here and add the correct DNS entry on your end. You can test it out as you're given one free redirection.</p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="item">
+			<p class="lolll" >How much does it cost?</p>
+			<div id="pb_faq4"  role="tabpanel">
+			  <div class="py-3">
+				<p>Check the price of the different plans and choose the one that fits your need. You can change plans at any time.</p>
+			  </div>
+			</div>
+		  </div>
+
+		  <div class="item">
+			<p class="lolll" >I have a technical problem, who do I email?</p>
+			<div id="pb_faq5"  role="tabpanel">
+			  <div class="py-3">
+				<p>Dont hesitate to <%= link_to "contact", contact_path %> us for help or advice. </p>
+			  </div>
+			</div>
+		  </div>
+
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>
+
+
+
